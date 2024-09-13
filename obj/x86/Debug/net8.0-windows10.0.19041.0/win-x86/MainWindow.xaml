@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="t.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:t"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <NavigationView x:ConnectionId='2' x:Name="navView1" CompactPaneLength="50" OpenPaneLength="200"                                                   >
+        <NavigationView.MenuItems>
+            <NavigationViewItem Content="登录" Tag="LoginPage">
+                <NavigationViewItem.Icon>
+                    <ImageIcon Source="ms-appx:///Images/yuan.jpg"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+
+            <NavigationViewItem Content="当前成绩" Tag="GradePage">
+                <NavigationViewItem.Icon>
+                    <ImageIcon Source="ms-appx:///Images/nong.jpg"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+
+            <NavigationViewItem Content="查询记录" Tag="HistoryPage">
+                <NavigationViewItem.Icon>
+                    <ImageIcon Source="ms-appx:///Images/zhou.jpg"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+
+            <NavigationViewItem Content="成绩对比" Tag="ComparePage">
+                <NavigationViewItem.Icon>
+                    <ImageIcon Source="ms-appx:///Images/sha.jpg"/>
+                </NavigationViewItem.Icon>
+            </NavigationViewItem>
+        </NavigationView.MenuItems>
+
+        <Frame x:ConnectionId='3' x:Name="contentFrame"/>
+    </NavigationView>
+
+</Window>
+

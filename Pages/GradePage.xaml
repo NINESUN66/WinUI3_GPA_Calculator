@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="t.Pages.GradePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:t.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:community="using:CommunityToolkit.WinUI.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="当前您的GPA为：" FontSize="20" VerticalAlignment="Center"/>
+            <TextBox x:Name="GPABox" Text="" Margin="10" IsReadOnly="True"/>
+            <TextBlock Text="当前您的账号为：" FontSize="20" VerticalAlignment="Center"/>
+            <TextBox x:Name="NowAccountBox" Text="" Margin="10" IsReadOnly="True"/>
+        </StackPanel>
+
+        <community:DataGrid x:Name="GradeDataGrid" ItemsSource="{x:Bind Courses}" Grid.Row="1" AutoGenerateColumns="False" HeadersVisibility="Column">
+            <community:DataGrid.Columns>
+                <community:DataGridTextColumn Header="课程名" Binding="{Binding CourseName}" Width="*" IsReadOnly="True"/>
+                <community:DataGridTextColumn Header="课程类别" Binding="{Binding CourseCategory}" Width="*" IsReadOnly="True"/>
+                <community:DataGridTextColumn Header="学分" Binding="{Binding Credits}" Width="*" IsReadOnly="True"/>
+                <community:DataGridTextColumn Header="成绩" Binding="{Binding Grade}" Width="*" IsReadOnly="True"/>
+                <community:DataGridTextColumn Header="绩点" Binding="{Binding GradePoint}" Width="*" IsReadOnly="True"/>
+                <community:DataGridTextColumn Header="本科对绩点的影响" Binding="{Binding GradeEffect}" Width="Auto" IsReadOnly="True"/>
+            </community:DataGrid.Columns>
+        </community:DataGrid>
+    </Grid>
+
+</Page>
